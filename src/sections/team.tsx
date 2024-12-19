@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const people = [
   {
     name: "Lindsay Walton",
@@ -31,7 +29,7 @@ export default function Team() {
         >
           {people.map((person) => (
             <li key={person.name}>
-              <Image
+              <img
                 alt=""
                 src={person.imageUrl}
                 className="aspect-[3/2] w-full rounded-2xl object-cover"
