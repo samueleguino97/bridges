@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Hero from "@/sections/hero";
 import Team from "@/sections/team";
-import Mission from "@/sections/mission";
 import Feature from "@/sections/feature";
 import Footer from "@/sections/footer";
 
