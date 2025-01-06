@@ -9,7 +9,7 @@ export default buildConfig({
 
   admin: {
     livePreview: {
-      url: "http://localhost:3000",
+      url: "https://bridges-wine.vercel.app",
       collections: ["pages"],
     },
   },
