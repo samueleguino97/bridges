@@ -9,6 +9,7 @@ import { RefreshRouteOnSave } from "@/components/RefreshRouteOnSave";
 import { getPayload } from "payload";
 import config from "@payload-config";
 
+export const dynamic = "force-dynamic";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

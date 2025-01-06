@@ -1,8 +1,4 @@
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  LockClosedIcon,
-} from "@heroicons/react/20/solid";
+import { CloudArrowUpIcon } from "@heroicons/react/20/solid";
 
 export default function Feature({ data: incoming }: { data: any }) {
   const data = incoming?.["Feature Section"];
