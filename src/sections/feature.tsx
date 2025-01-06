@@ -4,30 +4,6 @@ import {
   LockClosedIcon,
 } from "@heroicons/react/20/solid";
 
-const features = [
-  {
-    name: "Push to deploy",
-    description:
-      "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
-    href: "#",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "SSL certificates",
-    description:
-      "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
-    href: "#",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Simple queues",
-    description:
-      "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-
 export default function Feature({ data: incoming }: { data: any }) {
   const data = incoming?.["Feature Section"];
   return (
@@ -46,7 +22,7 @@ export default function Feature({ data: incoming }: { data: any }) {
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {data?.features?.map((feature) => (
+            {data?.features?.map((feature: any) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
                   <CloudArrowUpIcon
