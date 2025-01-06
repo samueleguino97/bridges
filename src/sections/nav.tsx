@@ -47,14 +47,9 @@ export default function Nav() {
             onClick={() => setMobileMenuOpen(true)}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">abrir menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
-        </div>
-        <div className="hidden lg:flex">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </nav>
       <Dialog
@@ -78,7 +73,7 @@ export default function Nav() {
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Cerrar menu</span>
               <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
@@ -94,14 +89,6 @@ export default function Nav() {
                     {item.name}
                   </a>
                 ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
               </div>
             </div>
           </div>

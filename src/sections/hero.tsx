@@ -11,8 +11,9 @@ const navigation = [
   { name: "Nuestro Equipo", href: "#" },
 ];
 
-export default function Hero() {
+export default function Hero({ data }: { data: any }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const heroData = data?.["Hero Section"];
 
   return (
     <div className="bg-white">
@@ -33,7 +34,7 @@ export default function Hero() {
               onClick={() => setMobileMenuOpen(true)}
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Abrir menú principal</span>
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
@@ -66,7 +67,7 @@ export default function Hero() {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Bridges</span>
                 <Logo />
               </a>
               <button
@@ -74,7 +75,7 @@ export default function Hero() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
               >
-                <span className="sr-only">Close menu</span>
+                <span className="sr-only">cerrrar menu</span>
                 <XMarkIcon aria-hidden="true" className="size-6" />
               </button>
             </div>
@@ -91,14 +92,6 @@ export default function Hero() {
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
               </div>
             </div>
           </DialogPanel>
@@ -112,24 +105,21 @@ export default function Hero() {
         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
-              We’re changing the way people connect
+              {heroData?.["Hero Title"]}
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt
-                sunt. Qui irure qui lorem cupidatat commodo.
+                {heroData?.hero_description}
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a
                   href="#"
                   className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Get started
+                  {heroData?.hero_cta_button_text}
                 </a>
                 <a href="#" className="text-sm/6 font-semibold text-gray-900">
-                  Learn more <span aria-hidden="true">→</span>
+                  {heroData?.hero_learn_more_text}
                 </a>
               </div>
             </div>
