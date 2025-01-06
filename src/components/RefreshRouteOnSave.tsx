@@ -10,7 +10,10 @@ export const RefreshRouteOnSave: React.FC = () => {
   return (
     <PayloadLivePreview
       refresh={() => router.refresh()}
-      serverURL="https://bridges-wine.vercel.app"
+      serverURL={
+        process.env.NEXT_PUBLIC_PAYLOAD_LIVE_PREVIEW_URL! ||
+        "http://localhost:3000"
+      }
     />
   );
 };
