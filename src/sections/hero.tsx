@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "@/components/logo";
+import InViewCome from "@/components/InViewCome";
 
 const navigation = [
   { name: "Nosotros", href: "#" },
@@ -105,11 +106,23 @@ export default function Hero({ data }: { data: any }) {
         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
-              {heroData?.["Hero Title"]}
+              {heroData?.["Hero Title"]
+                ?.split(" ")
+                ?.map((w: string, i: number) => (
+                  <InViewCome delay={i * 0.1} key={i}>
+                    {w + " "}
+                  </InViewCome>
+                ))}
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-                {heroData?.hero_description}
+                {heroData?.hero_description
+                  ?.split(" ")
+                  ?.map((w: string, i: number) => (
+                    <InViewCome delay={i * 0.1} key={i}>
+                      {w + " "}
+                    </InViewCome>
+                  ))}
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a

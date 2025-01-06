@@ -1,3 +1,4 @@
+import InViewCome from "@/components/InViewCome";
 import { CloudArrowUpIcon } from "@heroicons/react/20/solid";
 
 export default function Feature({ data: incoming }: { data: any }) {
@@ -10,10 +11,20 @@ export default function Feature({ data: incoming }: { data: any }) {
             {data?.feature_captio}
           </h2>
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            {data?.feature_title}
+            {data?.feature_title?.split(" ")?.map((w: string, i: number) => (
+              <InViewCome delay={i * 0.2} key={i}>
+                {w + " "}
+              </InViewCome>
+            ))}
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            {data?.feature_description}
+            {data?.feature_description
+              ?.split(" ")
+              ?.map((w: string, i: number) => (
+                <InViewCome delay={i * 0.02} key={i}>
+                  {w + " "}
+                </InViewCome>
+              ))}
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
