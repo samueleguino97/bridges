@@ -1,5 +1,6 @@
 import InViewCome from "@/components/InViewCome";
 import { CloudArrowUpIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 export default function Feature({ data: incoming }: { data: any }) {
   const data = incoming?.["Feature Section"];
@@ -41,12 +42,13 @@ export default function Feature({ data: incoming }: { data: any }) {
                 <dd className="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
-                    <a
-                      href={feature.href}
+                    <Link
+                      prefetch
+                      href="/servicios"
                       className="text-sm/6 font-semibold text-primary"
                     >
                       Learn more <span aria-hidden="true">→</span>
-                    </a>
+                    </Link>
                   </p>
                 </dd>
               </div>

@@ -38,6 +38,32 @@ export const Media: CollectionConfig = {
     },
   ],
 };
+export const NormalPages: CollectionConfig = {
+  slug: "normal-pages",
+  fields: [
+    {
+      name: "sections",
+      type: "blocks",
+      blocks: [
+        {
+          slug: "hero",
+          fields: [
+            { name: "title", type: "text" },
+            { name: "description", type: "text" },
+            {
+              name: "cta_button_text",
+              type: "text",
+            },
+            {
+              name: "learn_more_text",
+              type: "text",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 export const MainCollection: CollectionConfig = {
   slug: "pages",
   versions: {

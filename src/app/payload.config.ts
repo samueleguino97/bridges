@@ -3,7 +3,7 @@ import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { buildConfig } from "payload";
-import { MainCollection, Media } from "@/collections/pages/main";
+import { MainCollection, Media, NormalPages } from "@/collections/pages/main";
 
 export default buildConfig({
   editor: lexicalEditor(),
@@ -13,11 +13,11 @@ export default buildConfig({
       url:
         process.env.NEXT_PUBLIC_PAYLOAD_LIVE_PREVIEW_URL! ||
         "http://localhost:3000",
-      collections: ["pages", "media"],
+      collections: ["pages", "media", "normal-pages"],
     },
   },
 
-  collections: [MainCollection, Media],
+  collections: [MainCollection, Media, NormalPages],
   secret: process.env.TURSO_AUTH_TOKEN!,
 
   plugins: [
