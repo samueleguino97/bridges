@@ -102,7 +102,7 @@ export default function Page() {
           </div>
         </div>
         <form
-          action="#"
+          action="/api/contact"
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
         >
