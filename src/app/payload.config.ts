@@ -4,6 +4,7 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { buildConfig } from "payload";
 import { MainCollection, Media, NormalPages } from "@/collections/pages/main";
+import Messages from "@/collections/messages";
 
 export default buildConfig({
   editor: lexicalEditor(),
@@ -13,11 +14,11 @@ export default buildConfig({
       url:
         process.env.NEXT_PUBLIC_PAYLOAD_LIVE_PREVIEW_URL! ||
         "http://localhost:3000",
-      collections: ["pages", "media", "normal-pages"],
+      collections: ["pages", "media", "normal-pages", "messages"],
     },
   },
 
-  collections: [MainCollection, Media, NormalPages],
+  collections: [MainCollection, Media, NormalPages, Messages],
   secret: process.env.TURSO_AUTH_TOKEN!,
 
   plugins: [
